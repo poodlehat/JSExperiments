@@ -1,0 +1,20 @@
+<!-- Angular Templates -->
+<script type="text/ng-template" id="textQuestion">
+    <p ng-show="question.isAvailable()">
+        <label for="{{question.questionName}}">{{question.labelText}}</label>
+        <input id="{{question.questionName}}" type="text" ng-model="question.answer" ng-change="question.onChange()" />
+    </p>
+</script>
+
+<script type="text/ng-template" id="selectQuestion">
+    <p ng-show="question.isAvailable()">
+        <label for="{{question.questionName}}">{{question.labelText}}</label>
+        <select id="{{question.questionName}}" ng-options="option.id as option.text for option in question.options" ng-model="question.answer" ng-change="question.onChange()"></select>
+    </p>
+</script>
+
+<script type="text/ng-template" id="buttonQuestion">
+    <p ng-show="question.isAvailable()">
+        <input type="button" value="{{question.labelText}}" ng-click="question.onChange()"></select>
+    </p>
+</script>
